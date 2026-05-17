@@ -8,9 +8,9 @@ SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 print("SUPABASE_URL =", SUPABASE_URL)
 def get_bot_config():
- 
+
     url = f"{SUPABASE_URL}/rest/v1/CM?select=bot_token,chat_id"
- 
+
     headers = {
         "apikey": SUPABASE_KEY,
         "Authorization": f"Bearer {SUPABASE_KEY}"
@@ -21,13 +21,13 @@ def get_bot_config():
         headers=headers,
         timeout=10
     )
- 
-data = r.json()
-print(data)
 
-if not data:
-    raise Exception("No bot config found")
- 
+    data = r.json()
+    print(data)
+
+    if not data:
+        raise Exception("No bot config found")
+
     return (
         data[0]["bot_token"],
         data[0]["chat_id"]
