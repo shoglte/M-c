@@ -22,7 +22,7 @@ def get_bot_config():
         timeout=10
     )
 
-    data = r.json()
+print(data)
 
     if not data:
         raise Exception("No bot config found")
