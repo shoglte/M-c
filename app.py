@@ -1,7 +1,7 @@
 import os
 import requests
 from flask import Flask, request, jsonify
-
+print("SUPABASE_URL =", SUPABASE_URL)
 app = Flask(__name__)
 
 SUPABASE_URL = os.getenv("SUPABASE_URL")
