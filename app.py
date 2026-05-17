@@ -8,7 +8,7 @@ SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 print("SUPABASE_URL =", SUPABASE_URL)
 def get_bot_config():
-
+ 
     url = f"{SUPABASE_URL}/rest/v1/bot_config?select=bot_token,chat_id"
 
     headers = {
