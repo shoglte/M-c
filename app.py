@@ -21,12 +21,13 @@ def get_bot_config():
         headers=headers,
         timeout=10
     )
-
+ 
+data = r.json()
 print(data)
 
-    if not data:
-        raise Exception("No bot config found")
-
+if not data:
+    raise Exception("No bot config found")
+ 
     return (
         data[0]["bot_token"],
         data[0]["chat_id"]
